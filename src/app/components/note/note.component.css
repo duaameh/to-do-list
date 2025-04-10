@@ -1,0 +1,126 @@
+.notes-container {
+    width: 100%;
+    max-width: 300px;
+    margin: 20px auto;
+    padding: 15px;
+    background: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  }
+  
+  .note-input {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 15px;
+  }
+  
+  .note-input input,
+  .note-input textarea {
+    width: 91%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+  }
+  
+  .note-input button {
+    background: #5c6bc0;
+    color: white;
+    border: none;
+    padding: 8px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .note-input button:hover {
+    background: #0056b3;  
+    transition: transform 0.2s ease;
+
+  }
+  
+  .note-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+
+  }
+  
+  .note-item {
+    background: white;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+  
+  .note-item h3 {
+    margin: 0;
+    color: #333;
+  }
+  
+  .note-item p {
+    margin: 5px 0;
+    color: #666;
+    word-wrap: break-word;
+  }
+  
+  .note-item .delete-btn {
+    background: #dc3545;
+    color: white;
+    border: none;
+    padding: 0px 16px;
+        border-radius: 5px;
+    cursor: pointer;
+    height: 35px;
+    font-size: 12px;
+  }
+  .dropdown-menu.open {
+    transform: scale(1);
+    opacity: 1;
+  }
+  
+  .note-item .delete-btn:hover {
+    background: #b02a37;
+  }
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: scale(0.95);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  
+  @keyframes fadeOut {
+    from {
+      opacity: 1;
+      transform: scale(1);
+    }
+    to {
+      opacity: 0;
+      transform: scale(0.95);
+    }
+  }
+  /* تأثير التحميل */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* تطبيق التأثير على كل عنصر عند تحميل الصفحة */
+.task-item, .note-item {
+  opacity: 0;
+  animation: fadeInUp 0.5s ease-out forwards;
+}

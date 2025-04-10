@@ -1,0 +1,9 @@
+<div class="task-list">
+  <h3>{{ status }}</h3>
+  <div *ngFor="let task of filteredTasks">
+    <app-task-item [task]="task" 
+                   (statusChange)="moveToNextStage(task)" 
+                   (deleteTask)="deleteTask(task)">
+    </app-task-item>
+  </div>
+</div>

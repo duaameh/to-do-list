@@ -1,0 +1,21 @@
+<div class="notes-container">
+    <h2>📌 Notes</h2>
+  
+    <div class="note-input">
+      <textarea [(ngModel)]="newNoteContent" placeholder="Add your notes here..."></textarea>
+      <button (click)="addNote()"> Add Note</button>
+    </div>
+  
+    <div class="note-list">
+      <div class="note-item" *ngFor="let note of notes">
+        <p>
+          <span *ngFor="let word of note.content.split(' ')">
+            <a *ngIf="word.startsWith('http')" [href]="word" target="_blank">{{ word }}</a>
+          <span *ngIf="!word.startsWith('http')"  > {{ word }}</span>
+          </span>
+        </p>
+        <button class="delete-btn" (click)="deleteNote(note.id)"> Delete</button>
+      </div>
+    </div>
+  </div>
+  

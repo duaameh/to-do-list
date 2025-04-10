@@ -1,0 +1,21 @@
+<div class="task-item">
+  <img *ngIf="task.image" [src]="task.image" alt="Task Image" class="task-image" />
+
+  <div class="task-header">
+    <input type="checkbox" [checked]="task.status === 'Done'"  (change)="changeStatus()" />
+ 
+    <span *ngIf="!isEditing" (click)="enableEditing()">{{ task.title }}</span>
+    <input *ngIf="isEditing" [(ngModel)]="task.title" (keyup.enter)="saveEdit($event)" autofocus />
+
+    <p class="menu-icon" (click)="toggleMenu()">⋮</p>
+  </div>
+
+  <div class="dropdown-menu" *ngIf="isMenuOpen">
+    <button (click)="enableEditing()"> Edit</button>
+    <button (click)="removeTask()"> Delete</button>
+    <label class="upload-btn">
+       Add background
+      <input type="file" (change)="uploadImage($event)" hidden />
+    </label>
+  </div>
+</div>
