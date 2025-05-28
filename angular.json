@@ -23,8 +23,9 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/task-manger",
-            "index": "src/index.html",
+            "outputPath": "docs",  
+                "baseHref": "/to-do-list/",
+                "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
               "zone.js"
@@ -70,18 +71,7 @@
           },
           "defaultConfiguration": "production"
         },
-        "serve": {
-          "builder": "@angular-devkit/build-angular:dev-server",
-          "configurations": {
-            "production": {
-              "buildTarget": "task-manger:build:production"
-            },
-            "development": {
-              "buildTarget": "task-manger:build:development"
-            }
-          },
-          "defaultConfiguration": "development"
-        },
+       
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n"
         },
