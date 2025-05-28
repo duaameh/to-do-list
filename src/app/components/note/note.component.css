@@ -124,3 +124,97 @@
   opacity: 0;
   animation: fadeInUp 0.5s ease-out forwards;
 }
+
+/* المظهر الأساسي للـ task-board */
+.task-board {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f9;
+  padding: 40px 20px;
+  margin-top: -1%;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+/* قائمة المهام */
+.board {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+/* كل عمود في البورد */
+app-task-list {
+  flex: 1 1 300px;
+  max-width: 350px;
+}
+
+/* حاوية الملاحظات */
+.notes-container {
+  width: 100%;
+  max-width: 100%;
+  padding: 15px;
+  margin-bottom: 20px;
+}
+
+/* عنصر الملاحظة */
+.note-item {
+  flex-direction: column;
+  align-items: start;
+}
+
+/* عنصر المهمة */
+.task-item {
+  width: 100%;
+  max-width: 300px;
+}
+
+/* الإدخال */
+.task-input input {
+  width: 100%;
+  flex: 1;
+}
+
+/* إدخال المهمة + زر الإضافة */
+.task-input {
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* الميديا كويري للشاشات الصغيرة */
+@media (max-width: 768px) {
+  .board {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .notes-container {
+    max-width: 100%;
+  }
+
+  .task-input {
+    flex-direction: column;
+  }
+
+  .task-input input,
+  .task-input button {
+    width: 100%;
+  }
+
+  .note-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .note-item .delete-btn {
+    align-self: flex-end;
+  }
+
+  .dropdown-menu {
+    right: 0;
+    left: auto;
+  }
+}
